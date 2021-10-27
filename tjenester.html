@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <title>SHAVI - Om Oss</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="nav-container left">
+        <a href="/" class="active logo">
+          <img src="logo.png" id="logo" title="source: imgur.com" />
+        </a>
+      </div>
+
+      <div class="nav-container left">
+        <a href="abonement.html">Abonement</a>
+        <a href="tjenester.html">Steder</a>
+      </div>
+
+      <div class="nav-container right">
+        <a href="tjenester.html?hvor=førde">Førde</a>
+        <a href="tjenester.html?hvor=bergen">Bergen</a>
+        <a href="tjenester.html?hvor=oslo">Oslo</a>
+      </div>
+
+      <div class="right">
+        <a href="javascript:void(0);" class="icon" onclick="toggleBurger()">
+          &#9776;
+        </a>
+      </div>
+    </div>
+
+    <main>
+      <!-- TODO endre posisjon på kartet til mer realistisk loalisasjon  -->
+      <div class="text-center">
+        <h2>Hvor er vi</h2>
+        <h3 id="location-placeholder"></h3>
+        <div id="maps__content">
+          <iframe
+            height="600"
+            width="100%"
+            src="https://www.google.com/maps/d/u/0/embed?mid=10YL0WoctgPcK8PYsgG2WwQJYWYuAkOkV"
+          ></iframe>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      setLocation()
+    </script>
+  </body>
+</html>

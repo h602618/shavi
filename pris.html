@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <title>SHAVI</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="nav-container left">
+        <a href="/" class="active logo">
+          <img src="logo.png" id="logo" title="source: imgur.com" />
+        </a>
+      </div>
+
+      <div class="nav-container left">
+        <a href="abonement.html">Abonement</a>
+        <a href="tjenester.html">Steder</a>
+      </div>
+
+      <div class="nav-container right">
+        <a href="tjenester.html?hvor=førde">Førde</a>
+        <a href="tjenester.html?hvor=bergen">Bergen</a>
+        <a href="tjenester.html?hvor=oslo">Oslo</a>
+      </div>
+
+      <div class="right">
+        <a href="javascript:void(0);" class="icon" onclick="toggleBurger()">
+          &#9776;
+        </a>
+      </div>
+    </div>
+
+    <main>
+      <h2>Abonnement beskrivelse</h2>
+
+      <table class="section-center">
+        <tr class="grid-container">
+          <th>Bil</th>
+          <th>Båt</th>
+          <th>Bil og Båt</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="grid-container">
+          <td>
+            <a href="pris.html#bil">
+              <!-- TODO sjekk om nyen av bildene må fikses -->
+              <!-- TODO Samme størrelse på bilder -->
+              <img
+                src="https://st.automobilemag.com/uploads/sites/5/2017/11/2020-Tesla-Roadster-13.jpg"
+                style="width: 100%"
+                alt="Bilde av bil"
+                class="pris-bilde"
+              />
+            </a>
+            <!-- TODO lag offset, så pris og kategori hører sammen -->
+            <!-- TODO Større border på bunnen av bildet -->
+            <!-- TODO Tekst skal være oppå bunn-border -->
+
+            <p>Pris : fra 15 000 pr året (ink. mva)</p>
+          </td>
+          <td>
+            <a href="pris.html#båt">
+              <img
+                src="https://www.mondobarcamarket.it/wp-content/uploads/2019/07/ibrida100.jpg"
+                style="width: 100%"
+                alt="Bilde av båt"
+                class="pris-bilde"
+              />
+            </a>
+            <p>Pris : fra 25 000 pr året (ink. mva)</p>
+          </td>
+          <td>
+            <a href="pris.html#bilogbåt">
+              <img
+                src="https://th.bing.com/th/id/R.c2b1bff88daf4ed02e0625a2c2d887b3?rik=PgJToW1zmXuk%2fQ&riu=http%3a%2f%2fi.dailymail.co.uk%2fi%2fpix%2f2014%2f10%2f29%2f1414580788539_Image_galleryImage__Video_Available_LOCATION.JPG&ehk=e39v5mPxiMH8n%2fQwfviJ6lzPuSti1QAO6%2fhQl037oPs%3d&risl=&pid=ImgRaw&r=0"
+                style="width: 100%"
+                alt="Bilde av båt og bil"
+                class="pris-bilde"
+              />
+              <p></p>
+              <p></p>
+            </a>
+            <p>Pris : fra 30 000 per året (ink. mva)</p>
+          </td>
+        </tr>
+      </table>
+
+      <div id="bil">
+        <!-- TODO Kanskje Bilde eller noe over tekst -->
+        <img
+          src="https://i.imgur.com/loD9qMW.jpg?1"
+          style="width: 600px; height: 300px"
+        />
+        <h3 class="fordel">Bil beskrivelse</h3>
+        <!-- TODO lag spacing og noe CSS -->
+        <ul>
+          <li>Pris : fra 1500 per måned (ink. mva)</li>
+          <li>Moderne biler</li>
+          <li>Praktisk bil for egenbruk eller for hele familien</li>
+          <li>Lett tilgjengelige plaseringer</li>
+        </ul>
+      </div>
+      <div id="båt">
+        <img
+          src="https://i.imgur.com/sqzuUm8.jpg?1"
+          style="width: 600px; height: 300px"
+        />
+        <h3 class="fordel">Båt beskrivelse</h3>
+        <ul>
+          <li>Pris : fra 2500 per måned (ink. mva)</li>
+          <li>Moderne elektriske båter til rimelig pris</li>
+          <li>
+            For deg som har lyst til å oppdage dine reisemål enten i fjordene
+            eller i sjøen
+          </li>
+          <li>Båter som tilfredsstiller dine dagligebehov.</li>
+        </ul>
+      </div>
+
+      <div id="bilogbåt">
+        <img src="https://i.imgur.com/aubJv6E.png?1" />
+        <h3 class="fordel">Fordeler med bil og båt</h3>
+        <ul>
+          <li>Pris : fra 3000 per måned (ink. mva)</li>
+          <li>
+            Billigere pris samlet enn hvis du leier ut bil og båt hver for seg
+          </li>
+        </ul>
+      </div>
+      <div class="grid-item"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <title>SHAVI</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="nav-container left">
+        <a href="/" class="active logo">
+          <img src="logo.png" id="logo" title="source: imgur.com" />
+        </a>
+      </div>
+
+      <div class="nav-container left">
+        <a href="abonement.html">Abonement</a>
+        <a href="tjenester.html">Steder</a>
+      </div>
+
+      <div class="nav-container right">
+        <a href="tjenester.html?hvor=førde">Førde</a>
+        <a href="tjenester.html?hvor=bergen">Bergen</a>
+        <a href="tjenester.html?hvor=oslo">Oslo</a>
+      </div>
+
+      <div class="right">
+        <a href="javascript:void(0);" class="icon" onclick="toggleBurger()">
+          &#9776;
+        </a>
+      </div>
+    </div>
+
+    <main>
+      <!-- FIXME bildene er strukket -->
+      <!-- TODO lag rullerende bilder  -->
+      <h2>Shavi er Norges første uteleiefirma for elektrisk bil og båt.</h2>
+      <div class="grid-container grid-container--center">
+        <div class="slideshow-wrapper" data-idx="1">
+          <div class="slideshow-container" data-idx="1"></div>
+        </div>
+      </div>
+
+      <div class="grid-container grid-container--center text-center">
+        <div>
+          <div class="border-forside padding grid-item--box">
+            <h3>Utlån</h3>
+
+            <div>
+              <h4>Bil</h4>
+              <!-- FIXME gir ikke mening, skal kun handle om båt -->
+              <p>
+                Trenger du en båt eller bil, som du kan hente og levere fra deg
+                når du vil? Vi tilbyr uteleie av elektriske båter og biler!
+                <a href="tjenester.html">
+                  <br />
+                  <b>Trykk her for å se utlånssteder</b>
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <h4>Bil og Båt</h4>
+              <!-- TODO Endre fra bilogbåt til Båt -->
+
+              <p>
+                Av biler tilbyr vi den fantastiske Tesla model 3 og av båter har
+                vi den lekre Hydrolift X-22 med elektrisk Evoy motor.
+                <a href="abonement.html">
+                  <br />
+                  <b>Trykk her for å se abonnementer</b>
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="grid-container grid-container--center text-center">
+            <div class="slideshow-wrapper" data-idx="2">
+              <div class="slideshow-container" data-idx="2"></div>
+            </div>
+          </div>
+
+          <div class="grid-container grid-item grid-item--fullwidth">
+            <div class="grid-item grid-item--halfwidth">
+              <div class="slideshow-wrapper" data-idx="3">
+                <div class="slideshow-container" data-idx="3"></div>
+              </div>
+            </div>
+            <div class="grid-item grid-item--halfwidth">
+              <div class="slideshow-wrapper" data-idx="4">
+                <div class="slideshow-container" data-idx="4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      const images1 = [
+        "https://i.imgur.com/loD9qMW.jpg?1",
+        "https://i.imgur.com/aubJv6E.png?1",
+        "https://i.imgur.com/sqzuUm8.jpg?1",
+        "https://i.imgur.com/cA5pW3s.jpg?1",
+        "https://i.imgur.com/53Rdt7O.jpg?1",
+      ]
+
+      const images2 = [
+        "https://i.imgur.com/loD9qMW.jpg?1",
+        "https://i.imgur.com/aubJv6E.png?1",
+        "https://i.imgur.com/sqzuUm8.jpg?1",
+        "https://i.imgur.com/cA5pW3s.jpg?1",
+        "https://i.imgur.com/53Rdt7O.jpg?1",
+      ]
+
+      const images3 = [
+        "https://i.imgur.com/loD9qMW.jpg?1",
+        "https://i.imgur.com/aubJv6E.png?1",
+        "https://i.imgur.com/sqzuUm8.jpg?1",
+        "https://i.imgur.com/cA5pW3s.jpg?1",
+        "https://i.imgur.com/53Rdt7O.jpg?1",
+      ]
+
+      const images4 = [
+        "https://i.imgur.com/loD9qMW.jpg?1",
+        "https://i.imgur.com/aubJv6E.png?1",
+        "https://i.imgur.com/sqzuUm8.jpg?1",
+        "https://i.imgur.com/cA5pW3s.jpg?1",
+        "https://i.imgur.com/53Rdt7O.jpg?1",
+      ]
+
+      let slider = new ImageSlider(images1, 1)
+      // slider.build()
+      slider.show()
+
+      let slider2 = new ImageSlider(images2, 2)
+      // slider2.build()
+      slider2.show()
+
+      let slider3 = new ImageSlider(images3, 3)
+      // slider3.build()
+      slider3.show()
+
+      let slider4 = new ImageSlider(images4, 4)
+      // slider4.build()
+      slider4.show()
+    </script>
+  </body>
+</html>
