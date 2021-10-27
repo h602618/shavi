@@ -24,6 +24,7 @@ p {
   display: -ms-flexbox;
   display: flex;
 }
+
 .grid-container--center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -66,6 +67,7 @@ p {
   -webkit-filter: brightness(80%);
           filter: brightness(80%);
 }
+
 .nav a {
   float: left;
   display: block;
@@ -77,12 +79,14 @@ p {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 .nav a:not(.logo):hover {
   background-color: #5c5c78;
   color: black;
   -webkit-filter: brightness(80%);
           filter: brightness(80%);
 }
+
 .nav .icon {
   display: none;
 }
@@ -100,11 +104,11 @@ p {
     float: right;
     display: block;
   }
-
   .nav-container.right {
     float: left;
   }
 }
+
 /* Desktop Devices */
 @media screen and (max-width: 640px) {
   .nav.nav--responsive {
@@ -121,6 +125,7 @@ p {
     text-align: left;
   }
 }
+
 /* Laget av Øyvind */
 .bilde-forside {
   width: 400px;
@@ -168,6 +173,7 @@ iframe {
 .coming-soon {
   color: #a72424;
 }
+
 .coming-soon::before {
   content: "-";
   margin-left: 10px;
@@ -191,6 +197,7 @@ iframe {
 .mySlides {
   display: none;
 }
+
 .mySlides > img {
   width: 100%;
 }
@@ -269,6 +276,7 @@ iframe {
   -webkit-transition: background-color 0.6s ease;
   transition: background-color 0.6s ease;
 }
+
 .dot.active, .dot:hover {
   background-color: #717171;
 }
@@ -298,9 +306,11 @@ iframe {
     opacity: 1;
   }
 }
+
 #abo__bil {
   margin-top: 14px;
 }
+
 #abo__bil img {
   /* display: none; */
   width: 100% !important;
@@ -315,12 +325,16 @@ iframe {
 .grid-item--box .grid-item--box {
   background-color: #171720;
 }
+
 .grid-item--box .grid-item--fullwidth {
   width: 100%;
 }
+
 .grid-item--box .grid-item--halfwidth {
   width: 50%;
 }
+
 .grid-item--box .grid-item--halfwidth:first-of-type {
   margin-right: 8px;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
