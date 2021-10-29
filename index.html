@@ -74,25 +74,16 @@
               </p>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="grid-container grid-container--center text-center">
-            <div class="slideshow-wrapper" data-idx="2">
-              <div class="slideshow-container" data-idx="2"></div>
-            </div>
-          </div>
+      <div class="grid-container grid-container--center">
+        <div class="slideshow-wrapper grid-item--halfwidth" data-idx="2">
+          <div class="slideshow-container" data-idx="2"></div>
+        </div>
 
-          <div class="grid-container grid-item grid-item--fullwidth">
-            <div class="grid-item grid-item--halfwidth">
-              <div class="slideshow-wrapper" data-idx="3">
-                <div class="slideshow-container" data-idx="3"></div>
-              </div>
-            </div>
-            <div class="grid-item grid-item--halfwidth">
-              <div class="slideshow-wrapper" data-idx="4">
-                <div class="slideshow-container" data-idx="4"></div>
-              </div>
-            </div>
-          </div>
+        <div class="slideshow-wrapper grid-item--halfwidth" data-idx="3">
+          <div class="slideshow-container" data-idx="3"></div>
         </div>
       </div>
     </main>
@@ -100,52 +91,34 @@
     <script src="script.js"></script>
     <script>
       const images1 = [
-        "https://i.imgur.com/loD9qMW.jpg?1",
-        "https://i.imgur.com/aubJv6E.png?1",
-        "https://i.imgur.com/sqzuUm8.jpg?1",
-        "https://i.imgur.com/cA5pW3s.jpg?1",
-        "https://i.imgur.com/53Rdt7O.jpg?1",
+        "slider-images/1.jpg",
+        "slider-images/2.png",
+        "slider-images/3.jpg",
+        "slider-images/4.jpg",
+        "slider-images/5.jpg",
       ]
 
       const images2 = [
-        "https://i.imgur.com/loD9qMW.jpg?1",
-        "https://i.imgur.com/aubJv6E.png?1",
-        "https://i.imgur.com/sqzuUm8.jpg?1",
-        "https://i.imgur.com/cA5pW3s.jpg?1",
-        "https://i.imgur.com/53Rdt7O.jpg?1",
+        "slider-images/6.jpg",
+        "slider-images/9.jpg",
+        "slider-images/11.jpg",
       ]
 
       const images3 = [
-        "https://i.imgur.com/loD9qMW.jpg?1",
-        "https://i.imgur.com/aubJv6E.png?1",
-        "https://i.imgur.com/sqzuUm8.jpg?1",
-        "https://i.imgur.com/cA5pW3s.jpg?1",
-        "https://i.imgur.com/53Rdt7O.jpg?1",
-      ]
-
-      const images4 = [
-        "https://i.imgur.com/loD9qMW.jpg?1",
-        "https://i.imgur.com/aubJv6E.png?1",
-        "https://i.imgur.com/sqzuUm8.jpg?1",
-        "https://i.imgur.com/cA5pW3s.jpg?1",
-        "https://i.imgur.com/53Rdt7O.jpg?1",
+        "slider-images/7.jpg",
+        "slider-images/8.jpg",
+        "slider-images/10.jpg",
       ]
 
       let slider = new ImageSlider(images1, 1)
-      // slider.build()
       slider.show()
+      slider.startAnimation()
 
-      let slider2 = new ImageSlider(images2, 2)
-      // slider2.build()
+      let slider2 = new ImageSlider(images2, 2, "Bil")
       slider2.show()
 
-      let slider3 = new ImageSlider(images3, 3)
-      // slider3.build()
+      let slider3 = new ImageSlider(images3, 3, "Båt")
       slider3.show()
-
-      let slider4 = new ImageSlider(images4, 4)
-      // slider4.build()
-      slider4.show()
     </script>
   </body>
 </html>

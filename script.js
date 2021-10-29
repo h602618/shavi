@@ -1,6 +1,8 @@
 const toggleBurger = () => {
   const drawer = document.querySelector(".nav")
+  const burger = document.getElementById("burger")
 
+  burger.classList.toggle("active")
   if (drawer.className === "nav") {
     drawer.className += " nav--responsive"
   } else {
@@ -20,6 +22,7 @@ const setLocation = () => {
   const url = new URL(location.href)
   const where = url.searchParams.get("hvor") || "".toLowerCase()
 
+  // Maps with all locations
   let google = new URL(
     "https://www.google.com/maps/d/u/0/embed?mid=10YL0WoctgPcK8PYsgG2WwQJYWYuAkOkV"
   )
@@ -37,7 +40,7 @@ const setLocation = () => {
       let query = where
       switch (query) {
         case "bergen":
-          query = "Solheimsgaten+1,+5058+Bergen"
+          query = "Solheimsgaten 1"
           break
         case "førde":
           query = "Firdavegen 22"
@@ -45,7 +48,7 @@ const setLocation = () => {
 
       google = new URL("https://maps.google.com/maps")
 
-      const zoomLevel = 11 // higher is nearer
+      const zoomLevel = 12 // higher is nearer
 
       google.searchParams.set("q", query)
       google.searchParams.set("z", zoomLevel)
@@ -59,12 +62,19 @@ const setLocation = () => {
 }
 
 class ImageSlider {
-  constructor(images, idx, caption = true) {
+  constructor(images, idx, caption = "") {
     this.images = images
     this.idx = idx
-    this.useCaption = caption
+    this.caption = caption
+
+    this.animationRef = null
+    this.animationStopped = false
 
     let slideIndex = 1
+
+    this.setCaption = function (caption) {
+      this.caption = caption
+    }
 
     this.plusSlides = function (n) {
       slideIndex += n
@@ -115,13 +125,13 @@ class ImageSlider {
 
         const childLabel = document.createElement("div")
         childLabel.classList.add("text")
-        childLabel.textContent = "Caption Text" // insert real text here
+        childLabel.textContent = this.caption // insert real text here
 
         child.appendChild(childPag)
         child.appendChild(childImg)
 
         // Only render caption if required
-        if (this.caption) {
+        if (this.caption.length > 0) {
           child.appendChild(childLabel)
         }
 
@@ -158,12 +168,18 @@ class ImageSlider {
 
       const prevBtn = document.createElement("a")
       prevBtn.classList.add("prev")
-      prevBtn.onclick = () => this.plusSlides(-1)
+      prevBtn.onclick = () => {
+        this.plusSlides(-1)
+        this.stopAnimation()
+      }
       prevBtn.textContent = "PREV"
 
       const nextBtn = document.createElement("a")
       nextBtn.classList.add("next")
-      nextBtn.onclick = () => this.plusSlides(1)
+      nextBtn.onclick = () => {
+        this.plusSlides(1)
+        this.stopAnimation()
+      }
       nextBtn.textContent = "NEXT"
 
       container.appendChild(prevBtn)
@@ -176,6 +192,26 @@ class ImageSlider {
       this.buildNav()
     }
 
+    // Run build command when construction is started
     this.build()
+
+    this.startAnimation = function (interval = 6000) {
+      if (!this.animationStopped) {
+        this.animationRef = setInterval(() => {
+          this.plusSlides(1)
+        }, interval)
+      }
+    }
+
+    this.stopAnimation = function (restartDelay = 20000) {
+      // Stop animation if button is clicked
+      clearInterval(this.animationRef)
+      this.animationStopped = true
+
+      setTimeout(() => {
+        this.animationStopped = false
+        this.startAnimation()
+      }, restartDelay)
+    }
   }
 }
