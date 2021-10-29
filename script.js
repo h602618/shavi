@@ -122,6 +122,7 @@ class ImageSlider {
 
         const childImg = document.createElement("img")
         childImg.src = this.images[i]
+        childImg.alt = "Slideshow image"
 
         const childLabel = document.createElement("div")
         const labelLink = document.createElement("a")
