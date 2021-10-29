@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap");
 
-/* TODO legg til tekstboks farge rgb 23, 23, 32 altså fargen for boksen bak bilder og skrift */
-/* Legg til bakgrunn farge rgb 92, 92, 120 Gjort */
-
 $bg: rgb(92, 92, 120);
+$bgLight: rgb(92, 92, 100);
+$bgDark: rgb(92, 92, 100);
 
 body {
   background-color: $bg;
@@ -17,17 +16,35 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+.label {
   color: white;
 }
 
 /* Bruk denne for plassering av elementer*/
-
 .grid-container {
   display: flex;
 
   &--center {
     justify-content: center;
+  }
+}
+
+.grid-item {
+  &--box {
+    background-color: rgb(23, 23, 32);
+  }
+
+  &--fullwidth {
+    width: 100%;
+  }
+
+  &--halfwidth {
+    width: 50%;
+
+    &:first-of-type {
+      margin-right: 8px;
+    }
   }
 }
 
@@ -46,21 +63,19 @@ p {
   margin-top: 2px;
 }
 
-/* Burger */
+/* Hamburger Meny */
 #burger {
   display: inline-block;
-  cursor: pointer;
-  zoom: 0.5;
+
+  transition: 150ms linear;
+  &.active {
+    transition: 150ms linear;
+
+    transform: rotate(90deg);
+  }
 }
 
-.burger__bar {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 6px 0;
-}
-
-/* navbar */
+/* Navigasjons bar */
 .nav {
   overflow: hidden;
   background-color: $bg;
@@ -93,7 +108,7 @@ p {
   float: right;
 }
 
-/* Mobile Devices */
+/* Mobile Enheter */
 @media screen and (max-width: 640px) {
   .nav a {
     &:not(.logo) {
@@ -109,9 +124,13 @@ p {
   .nav-container.right {
     float: left;
   }
+
+  .grid-item--halfwidth {
+    width: 100% !important;
+  }
 }
 
-/* Desktop Devices */
+/* Store Enheter */
 @media screen and (max-width: 640px) {
   .nav.nav--responsive {
     position: relative;
@@ -134,8 +153,12 @@ p {
 .bilde-forside {
   width: 400px;
   height: 200px;
+}
 
-  border-style: double;
+.border-forside {
+  background-color: $bgDark;
+
+  margin-bottom: 8px;
 }
 
 h2 {
@@ -183,7 +206,7 @@ iframe {
     color: white;
   }
 
-  color: rgb(167, 36, 36);
+  color: rgb(129, 28, 28);
 }
 
 #location-placeholder {
@@ -191,30 +214,24 @@ iframe {
   text-transform: capitalize;
 }
 
-/* W3Schools Image Slider */
-
-/* Slideshow container */
-
 .slideshow-container {
   position: relative;
 
   margin-bottom: 5px;
 }
 
-/* Hide the images by default */
-
+/* Skjul slidsene som standard */
 .mySlides {
   display: none;
 
-  > img {
+  img {
     width: 100%;
   }
 }
 
-/* Next & previous buttons */
+/* Knapper */
 .prev,
 .next {
-  /* cursor: pointer !important; */
   position: absolute;
   top: 50%;
   width: auto;
@@ -227,31 +244,28 @@ iframe {
   border-radius: 0 3px 3px 0;
   user-select: none;
   background-color: rgba(0, 0, 0, 0.55);
-  z-index: 1;
 
-  /* Fixes an issue where buttons dissappear because of html-placement */
+  /* fikser problem hvor knapp fader-ut pga animasjon */
+  z-index: 1;
 }
 
 .prev {
   left: 0;
 }
 
-/* Position the "next button" to the right */
-
+/* Posisjonering av .next-knapp */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-
+/* Ved hover, gjør farge mørkere */
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.85);
 }
 
 /* Caption text */
-
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -263,8 +277,7 @@ iframe {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Number text (1/3 etc) */
-
+/* Nummer posisjon indikator */
 .pagination {
   color: #f2f2f2;
   font-size: 12px;
@@ -274,7 +287,7 @@ iframe {
   background-color: black;
 }
 
-/* The dots/bullets/indicators */
+/* dot posisjon indikator */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -292,7 +305,6 @@ iframe {
 }
 
 /* Fading animation */
-
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -312,35 +324,23 @@ iframe {
 
 #abo__bil {
   margin-top: 14px;
+}
 
+#abo__bil,
+#abo__båt,
+#abo__bil-båt {
   img {
-    /* display: none; */
-
     width: 100% !important;
   }
+
+  p {
+    margin-top: 4px;
+    margin-bottom: 24px;
+  }
 }
 
-#abo__båt img,
-#abo__bil-båt img {
-  /* display: none; */
-
-  width: 100% !important;
-}
-
-.grid-item--box .grid-item {
-  &--box {
-    background-color: rgb(23, 23, 32);
-  }
-
-  &--fullwidth {
-    width: 100%;
-  }
-
-  &--halfwidth {
-    width: 50%;
-
-    &:first-of-type {
-      margin-right: 8px;
-    }
-  }
+#bil,
+#båt,
+#bilogbåt {
+  margin-bottom: 40px;
 }
