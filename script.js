@@ -10,10 +10,6 @@ const toggleBurger = () => {
   }
 }
 
-// MAP page
-// @TODO Legg til steder: Firdavegen 22, 6800 Førde og Solheimsgaten 1, Bergenhus, 5058 Bergen
-// Bil og båt plass i Bergen sentrum https://www.google.com/maps/place/Solheimsgaten+1,+5058+Bergen/@60.3779418,5.3307797,17z/data=!4m5!3m4!1s0x463cf953c61c1ba7:0x6431a9524c86aba3!8m2!3d60.377963!4d5.3318633
-// Bil og båt plass i Førde "sentrum" https://www.google.com/maps?q=Firdavegen+22,+6800+F%C3%B8rde&rlz=1C1CHBF_noNO973NO973&um=1&ie=UTF-8&sa=X&ved=2ahUKEwik6b_i6efzAhXv-SoKHXLMCqUQ_AUoAXoECAEQAw
 const setLocation = () => {
   const iframe = document.querySelector("iframe")
   const titleSelector = document.querySelector("h2")
