@@ -124,8 +124,15 @@ class ImageSlider {
         childImg.src = this.images[i]
 
         const childLabel = document.createElement("div")
-        childLabel.classList.add("text")
-        childLabel.textContent = this.caption // insert real text here
+        const labelLink = document.createElement("a")
+        labelLink.classList.add("text")
+        labelLink.setAttribute(
+          "href",
+          `pris.html#${this.caption.toLowerCase()}`
+        )
+        labelLink.textContent = this.caption
+
+        childLabel.appendChild(labelLink)
 
         child.appendChild(childPag)
         child.appendChild(childImg)
