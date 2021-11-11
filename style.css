@@ -59,6 +59,8 @@ p,
 #logo {
   height: 25px;
   margin-top: 2px;
+  -webkit-filter: invert(1) drop-shadow(1px 1px 0 black);
+          filter: invert(1) drop-shadow(1px 1px 0 black);
 }
 
 /* Hamburger Meny */
@@ -86,7 +88,7 @@ p,
 .nav a {
   float: left;
   display: block;
-  color: #000;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -97,7 +99,7 @@ p,
 
 .nav a:not(.logo):hover {
   background-color: #5c5c78;
-  color: black;
+  color: white;
   -webkit-filter: brightness(80%);
           filter: brightness(80%);
 }
@@ -347,5 +349,13 @@ iframe {
 #båt,
 #bilogbåt {
   margin-bottom: 40px;
+}
+
+main a:link {
+  color: #adf802;
+}
+
+main a:visited {
+  color: yellow;
 }
 /*# sourceMappingURL=style.css.map */
